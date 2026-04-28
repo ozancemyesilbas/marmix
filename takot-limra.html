@@ -5,128 +5,158 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Takot – Limra | Marmix</title>
+
     <link rel="icon" type="image/png" href="assets/Marmix Materyaller/logo1.png">
     <link rel="stylesheet" href="assets/css/main.css">
+
     <style>
         body {
             background: #0b0b0b;
             color: #fff;
             font-family: 'Source Sans Pro', sans-serif;
-            margin: 0
+            margin: 0;
         }
 
         .wrap {
             max-width: 1200px;
             margin: auto;
-            padding: 40px 24px
+            padding: 40px 24px;
         }
 
         .topbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 32px
+            margin-bottom: 32px;
         }
 
         .topbar a {
             color: #fff;
-            text-decoration: none
+            text-decoration: none;
         }
 
         .logo {
-            height: 42px
+            height: 42px;
         }
 
         .hero {
             display: grid;
             grid-template-columns: 1.1fr .9fr;
             gap: 32px;
-            align-items: center
+            align-items: center;
         }
 
-        .hero img,
-        .gallery img {
+        .hero img {
             width: 100%;
             border-radius: 20px;
-            display: block
+            display: block;
         }
 
         .card {
             background: #141414;
             border: 1px solid rgba(255, 255, 255, .08);
             border-radius: 20px;
-            padding: 28px
+            padding: 28px;
         }
 
         .kicker {
             color: #c7a36a;
             letter-spacing: .18em;
             text-transform: uppercase;
-            font-size: .8rem
+            font-size: .8rem;
         }
 
         h1 {
             font-size: 3rem;
-            margin: .3em 0
+            margin: .3em 0;
         }
 
         p {
             line-height: 1.8;
-            color: rgba(255, 255, 255, .82)
-        }
-
-        .specs,
-        .gallery {
-            display: grid;
-            gap: 16px
+            color: rgba(255, 255, 255, .82);
         }
 
         .specs {
+            display: grid;
             grid-template-columns: repeat(2, 1fr);
-            margin-top: 24px
-        }
-
-        .gallery {
-            grid-template-columns: repeat(3, 1fr);
-            margin-top: 40px
+            gap: 16px;
+            margin-top: 24px;
         }
 
         .spec {
             background: #101010;
             border: 1px solid rgba(255, 255, 255, .08);
             border-radius: 14px;
-            padding: 16px
+            padding: 16px;
         }
 
         .spec strong {
             display: block;
             color: #c7a36a;
-            margin-bottom: 6px
+            margin-bottom: 6px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 40px;
+        }
+
+        .gallery img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 20px;
+            display: block;
+            cursor: pointer;
+            transition: .3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.03);
+        }
+
+        #lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .92);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            cursor: zoom-out;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
         }
 
         .actions {
             display: flex;
             gap: 14px;
             flex-wrap: wrap;
-            margin-top: 28px
+            margin-top: 28px;
         }
 
         .btn {
             display: inline-block;
             padding: 14px 22px;
             border-radius: 999px;
-            text-decoration: none
+            text-decoration: none;
         }
 
         .btn.gold {
             background: #c7a36a;
             color: #111;
-            font-weight: 700
+            font-weight: 700;
         }
 
         .btn.dark {
             border: 1px solid rgba(255, 255, 255, .15);
-            color: #fff
+            color: #fff;
         }
 
         @media(max-width:900px) {
@@ -134,53 +164,86 @@
             .hero,
             .gallery,
             .specs {
-                grid-template-columns: 1fr
+                grid-template-columns: 1fr;
             }
 
             h1 {
-                font-size: 2.2rem
+                font-size: 2.2rem;
             }
         }
     </style>
 </head>
 
 <body>
+
     <div class="wrap">
         <div class="topbar">
             <a href="index.html"><img src="assets/Marmix Materyaller/logo.png" alt="Marmix" class="logo"></a>
             <a href="index.html">← Ana Sayfaya Dön</a>
         </div>
+
         <section class="hero">
             <img src="assets/Marmix Materyaller/Fotolar/Takot - Limra/c00.jpg" alt="Takot Limra">
+
             <div class="card">
                 <div class="kicker">Takot</div>
                 <h1>Takot – Limra</h1>
-                <p>Takot, insanlığın taş üzerine bıraktığı ilk ve en saf izlerin modern bir yorumudur. Varlığın temel
-                    hikâyelerini günümüz mimarisinin diliyle buluşturarak zamansız, dingin ve rafine bir yüzey etkisi
-                    oluşturur.</p>
+
+                <p>
+                    Takot, insanlığın taş üzerine bıraktığı ilk ve en saf izlerin modern yorumudur.
+                    Koleksiyon; varoluşun temel hikâyelerini günümüz mimarisinin diliyle buluşturan,
+                    zamansız desenleriyle sonsuz bir köprüdür.
+                </p>
+
                 <div class="specs">
-                    <div class="spec"><strong>Materyal Seçenekleri</strong><span>15 farklı taş</span></div>
+                    <div class="spec"><strong>Materyal Seçenekleri</strong><span>15 farklı motif</span></div>
                     <div class="spec"><strong>Malzeme</strong><span>Limra</span></div>
                     <div class="spec"><strong>Ölçüler</strong><span>2 × 14 × 28 cm</span></div>
                     <div class="spec"><strong>Paketleme</strong><span>16 × 17 × 32 cm kutu içinde</span></div>
                     <div class="spec"><strong>Kutu İçeriği</strong><span>5 adet taş</span></div>
-                    <div class="spec"><strong>Ağırlık</strong><span>7–11 kg</span></div>
+                    <div class="spec"><strong>Ağırlık</strong><span>7–11 kg aralığı</span></div>
                 </div>
+
                 <div class="actions">
                     <a class="btn gold" href="assets/Marmix Materyaller/Katalog.pdf" target="_blank">PDF Katalog</a>
                     <a class="btn dark" href="index.html#koleksiyonlar">Koleksiyonlara Dön</a>
                 </div>
             </div>
         </section>
+
         <section class="gallery">
-            <img src="assets/Marmix Materyaller/Fotolar/Takot - Limra/c00.jpg" alt="">
-            <img src="assets/Marmix Materyaller/Fotolar/Takot - Limra/c01.jpg" alt="">
-            <img src="assets/Marmix Materyaller/Fotolar/Takot - Limra/c02.jpg" alt="">
-            <img src="assets/Marmix Materyaller/Fotolar/Takot - Limra/c03.jpg" alt="">
-            <img src="assets/Marmix Materyaller/Fotolar/Takot - Limra/c04.jpg" alt="">
-            <img src="assets/Marmix Materyaller/Fotolar/Takot - Limra/c05.jpg" alt="">
+            <img src="assets/Marmix Materyaller/Fotolar/Takot - Limra/c00.jpg" alt="Takot Galeri 1">
+            <img src="assets/Marmix Materyaller/Fotolar/Takot - Limra/creation_2643612574.jpg" alt="Takot Galeri 2">
+            <img src="assets/Marmix Materyaller/Fotolar/Takot - Limra/c02.jpg" alt="Takot Galeri 3">
+            <img src="assets/Marmix Materyaller/Fotolar/Takot - Limra/c03.jpg" alt="Takot Galeri 4">
+            <img src="assets/Marmix Materyaller/Fotolar/Takot - Limra/c04.jpg" alt="Takot Galeri 5">
+            <img src="assets/Marmix Materyaller/Fotolar/Takot - Limra/c05.jpg" alt="Takot Galeri 6">
         </section>
     </div>
+
+    <div id="lightbox">
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script>
+        const galleryImages = document.querySelectorAll('.gallery img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        galleryImages.forEach(img => {
+            img.addEventListener('click', () => {
+                lightbox.style.display = 'flex';
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+            });
+        });
+
+        lightbox.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+            lightboxImg.src = '';
+        });
+    </script>
+
 </body>
 
 </html>
